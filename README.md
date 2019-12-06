@@ -45,8 +45,6 @@ docker run -td -p 80:80 --name currency_converter mhertzner/currency-converter:l
 docker stop currency_converter
 ```
 
-
-
 ### `yarn start`
 
 Runs the app in the development mode.<br />
