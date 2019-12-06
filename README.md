@@ -29,6 +29,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### docker 
+#### Build Container
+```bash
+docker build -t mhertzner/currency-converter:latest .
+```
+
+#### Run Container (detached mode)
+```bash
+docker run -td -p 80:80 --name currency_converter mhertzner/currency-converter:latest
+```
+
+#### Stop Container
+```bash
+docker stop currency_converter
+```
+
+
+
 ### `yarn start`
 
 Runs the app in the development mode.<br />
