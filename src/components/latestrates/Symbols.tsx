@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { InputLabel, MenuItem, FormControl, Select, Chip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import GlobalContext from 'contexts/GlobalContext';
-import { symbolList } from 'utils';
 
 const useStyles = makeStyles({
   formControl: {
@@ -23,7 +22,13 @@ const useStyles = makeStyles({
 
 const Symbols: React.FC = () => {
   const { formControl, chips, chip } = useStyles();
-  const { symbols, setSymbols } = useContext(GlobalContext);
+  const { base, symbols, setSymbols, symbolList } = useContext(GlobalContext);
+
+  useEffect(() => {
+    if (symbols.includes(base)) {
+      setSymbols(symbols.filter(symbol => symbol !== base));
+    }
+  }, [base, symbols, setSymbols]);
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     setSymbols(event.target.value as string[]);
