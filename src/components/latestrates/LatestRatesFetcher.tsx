@@ -18,7 +18,8 @@ const LatestRatesFetcher: React.FC = () => {
 
   useEffect(() => {
     (async () => {
-      const { data, error } = await fetchLatestRates(base, symbols);
+      const filteredSymbols = symbols.filter(symbol => symbol !== base);
+      const { data, error } = await fetchLatestRates(base, filteredSymbols);
 
       if (error) setResult({ error });
       if (data) setResult({ data });
