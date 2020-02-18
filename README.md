@@ -32,12 +32,12 @@ In the project directory, you can run:
 ### docker 
 #### Build Container
 ```bash
-docker build -t mhertzner/currency-converter:latest .
+docker build -t mherzner/currency-converter:latest .
 ```
 
 #### Run Container (detached mode)
 ```bash
-docker run -td -p 80:80 --name currency_converter mhertzner/currency-converter:latest
+docker run -td -p 80:80 --name currency_converter mherzner/currency-converter:latest
 ```
 
 #### Stop Container
